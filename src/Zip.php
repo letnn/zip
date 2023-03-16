@@ -69,9 +69,9 @@ class Zip
      * 注：ZipArchive::extractTo() 有异常，会丢失文件和文件错位，中文文件夹不兼容（有人说是编码问题）
      * @param $source_path 要解压的zip文件路径
      * @param null $target_path 导出到的目标文件夹，默认null时输出到zip文件所在目录
-     * @param false $force_cover 是否强制覆盖（默认false，文件已存在时会报错）
+     * @param false $force_cover 是否强制覆盖（默认true，false时文件已存在时会报错）
      */
-    public static function zipExport($source_path, $target_path = null, $force_cover = false)
+    public static function zipExport($source_path, $target_path = null, $force_cover = true)
     {
         if ($target_path === null) {
             $target_path = dirname($source_path);
