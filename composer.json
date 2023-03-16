@@ -1,0 +1,21 @@
+{
+    "name": "letnn/zip",
+    "description": "zip压缩解压功能封装",
+    "keywords": ["letnn", "zip", "解压", "压缩"],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "LangShen",
+        "email": "langshen@vip.qq.com"
+      }
+    ],
+    "require": {
+      "php": ">=7.1"
+    },
+    "autoload": {
+      "psr-4": {
+        "letnn\\": "src"
+      }
+    }
+  }
+  
