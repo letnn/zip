@@ -10,7 +10,7 @@ class Zip
      * @param $source_path 要压缩的源文件或文件夹
      * @param null $target_path 保存压缩文件的路径（不填则与源文件同目录，只写目录则自动生成文件名）
      */
-    public static function zipCreate($source_path, $target_path = null)
+    public static function zipCreate($source_path, $target_path = null, $type = false)
     {
         if ($target_path === null) {
             $target_path = $source_path . '.zip';
@@ -36,7 +36,7 @@ class Zip
             $zip_resource->addFile($source_path);
         } else {
             $zip_resource->addEmptyDir($dir_name);
-            self::addFolderRecursion($zip_resource, $source_path, $dir_name);
+            self::addFolderRecursion($zip_resource, $source_path, $type == false ? null : $dir_name);
         }
         $zip_resource->close();
     }
