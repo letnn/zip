@@ -35,7 +35,7 @@ class Zip
         if (is_file($source_path)) {
             $zip_resource->addFile($source_path);
         } else {
-            $zip_resource->addEmptyDir($dir_name);
+            if ($type == true) $zip_resource->addEmptyDir($dir_name);
             self::addFolderRecursion($zip_resource, $source_path, $type == false ? null : $dir_name);
         }
         $zip_resource->close();
